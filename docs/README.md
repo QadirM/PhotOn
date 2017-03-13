@@ -46,18 +46,19 @@ sufficient CSS styling:
 **Objective:** Photos can be uploaded, viewed, and destroyed through
 the API.
 
-### Phase 3: Follows (1 days)
+### Phase 3: Profile Page (2 day)
 
-**Objective:** User can follow/unfollow other users
+**Objective:** Profile page displaying the user's picture, cover-photo,
+username, and uploaded photos.
 
 ### Phase 4: Home Feed (2 day)
 
 **Objective:** Notes can be tagged with multiple tags, and tags are searchable.
 
-### Phase 5: Profile Page (2 day)
+### Phase 5: Follows (1 days)
 
-**Objective:** Profile page displaying the user's picture, cover-photo,
-username, and uploaded photos.
+**Objective:** User can follow/unfollow other users
+
 
 ### Bonus Features (TBD)
 - [ ] Tags

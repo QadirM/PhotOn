@@ -1,72 +1,73 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
- - AuthForm
+**SplashContainer**
+ - Splash
+  + SplashNavBar
+    - Logo
+    - SignUpContainer
+    - LogInContainer
+
+**SignUpContainer**
+ - SignUp (modal)
+
+**LogInContainer**
+ - LogIn (modal)
 
 **HomeContainer**
  - Home
- - Sidebar
+  + NavBar
+    - Logo
+    - UserDropDownContainer
+    - UploadFormContainer
+  + FeedIndexContainer
+  + DiscoverIndexContainer
 
-**NotesContainer**
- - NotesHeader
-  * NoteIndex
+**UserDropDownContainer**
+ - UserDropDown
+  + ProfileViewContainer
+  + logout
 
-**NotebookContainer**
- - NotebookHeader
-  + NoteIndex
+**UploadFormContainer**
+ - UploadForm (modal)
 
-**SearchResultsContainer**
- - Search
- - NoteIndex
+**FeedIndexContainer**
+ - FeedItemContainer
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**FeedItemContainer**
+ - FeedItem
+  + PhotoContainer
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-    + NoteTools
-    - NotebookSearch
-    - Tags
-      - Tag
-    * Note
+**PhotoContainer**
+ - Photo
 
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
+**ProfileViewContainer**
+ - ProfileView
+  + NavBar
+  + UserInfoContainer
 
-**Search**
+**UserInfoContainer**
+ - UserInfo
+  + EditInfoContainer
 
-**NewNotebook**
- - NewNotebook
+**EditInfoContainer**
+ - EditInfo
 
-**NewTag**
- - NewTag
+**DiscoverIndexContainer**
+ - DiscoverIndex
+  + DiscoverItemContainer
 
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
+**DiscoverItemContainer**
+ - DiscoverItem
 
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+|           Path            |        Component        |
+|---------------------------|-------------------------|
+| "/"                       |   "SplashContainer"     |
+| "/signup"                 |   "SignUpContainer"     |
+| "/login"                  |   "LogInContainer"      |
+| "/home"                   |     "HomeContainer"     |
+| "/home/user/:UserId"      | "ProfileViewContainer"  |
+| "/home/user/:UserId/edit" |   "EditInfoContainer"   |
+| "/home/photo/:PhotoId"    |    "PhotoContainer"     |
