@@ -16,6 +16,14 @@
       description: "details of photograph",
       user_id: 1
     }
+  },
+  currentPhoto: {
+    1: {
+      url: "url/in/here",
+      title: "photo title",
+      description: "details of photograph",
+      user_id: 1
+    }
   }
 }
 ```

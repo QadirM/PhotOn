@@ -10,6 +10,8 @@
 
 ### Users
 
+- `GET /api/users/:id/`
+- `GET /api/users/:id/photos`
 - `POST /api/users`
 - `PATCH /api/users`
 
@@ -28,5 +30,5 @@
 
 ### Follows
 
-- `POST /api/follows`
-- `DELETE /api/follows/:id`
+- `POST /api/users/:id/follow`
+- `DELETE /api/users/:id/unfollow`

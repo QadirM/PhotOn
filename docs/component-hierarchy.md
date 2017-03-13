@@ -64,10 +64,10 @@
 
 |           Path            |        Component        |
 |---------------------------|-------------------------|
-| "/"                       |   "SplashContainer"     |
+| "/about"                  |   "SplashContainer"     |
 | "/signup"                 |   "SignUpContainer"     |
 | "/login"                  |   "LogInContainer"      |
-| "/home"                   |     "HomeContainer"     |
-| "/home/user/:UserId"      | "ProfileViewContainer"  |
-| "/home/user/:UserId/edit" |   "EditInfoContainer"   |
-| "/home/photo/:PhotoId"    |    "PhotoContainer"     |
+| "/"                       |     "HomeContainer"     |
+| "/user/:UserId"           | "ProfileViewContainer"  |
+| "/user/:UserId/edit"      |   "EditInfoContainer"   |
+| "/photo/:PhotoId"         |    "PhotoContainer"     |

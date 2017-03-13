@@ -24,5 +24,6 @@ user_id     | integer   | not null, foreign key (references users), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-follower_id | integer   | not null, foreign key (references users), indexed
-followee_id | string    | not null, foreign key (references users), indexed
+follower_id | integer   | not null, foreign key (references users)
+followee_id | integer   | not null, foreign key (references users)
+add_index :follows, [:follower_id, :followee_id], :unique => true
