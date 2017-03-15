@@ -1,16 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-// react router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-// react components
 import App from './app';
-// import SearchContainer from './search/search_container';
-// import BenchFormContainer from './bench_form/bench_form_container';
-// import BenchShowContainer from './bench_show/bench_show_container';
-// import ReviewFormContainer from './bench_show/review_form_container';
+
+import SplashContainer from './splash/splash_container';
+import HomeContainer from './home/home_container';
 import SessionFormContainer from './session_form/session_form_container';
+// import GreetingContainer from './greeting/greeting_container';
 
 const Root = ({ store }) => {
 
@@ -28,10 +26,19 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectIfNotLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/about');
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
+          <IndexRoute component={HomeContainer} onEnter={_redirectIfNotLoggedIn} />
+          <Route path="/about" component={SplashContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         </Route>
