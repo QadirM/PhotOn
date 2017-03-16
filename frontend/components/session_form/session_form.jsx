@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link } from 'react-router';
+import SplashNavBar from '../splash/splash_nav_bar';
+// import onClickOutside from 'react-onclickoutside';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -7,8 +9,9 @@ class SessionForm extends React.Component {
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.guestLogin = this.guestLogin.bind(this);
+		// this.handleClickOutside = this.handleClickOutside.bind(this);
 	}
-
+	
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
 	}
@@ -24,6 +27,13 @@ class SessionForm extends React.Component {
 			[field]: e.currentTarget.value
 		});
 	}
+
+	// handleClickOutside(e){
+	// 	e.preventDefault();
+	// 	console.log("here");
+	// 	this.setState({ username: "", password: "", name: ""});
+	// 	this.props.router.push("/about");
+	// }
 
 	handleSubmit(e) {
 		e.preventDefault();
@@ -61,6 +71,7 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 			<div className="login-form-container-layer">
+				<SplashNavBar className="session-nav-bar" />
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					Welcome to PhotOn!
 					<br/>
@@ -92,4 +103,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;

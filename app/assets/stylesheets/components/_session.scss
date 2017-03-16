@@ -1,8 +1,8 @@
 .login-form-container{
   background: image-url('splash-nature1.jpg') no-repeat left bottom;
   height: 100%;
+  width: 100%;
   background-size: cover;
-  // text-shadow: 2px 2px 3px #000000;
   color: black;
   font-family: 'Open Sans', sans-serif;
 }
@@ -12,11 +12,12 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .login-form-box{
+
   	font-size: 18px;
     background: #fff;
   	display: inline-block;
@@ -27,7 +28,7 @@
     border-style: solid;
     border-width: 1px;
   	width: 400px;
-    // color: #71767a;
+  	margin-top: 20vh;
 }
 
 .login-form-box input, button{
@@ -50,4 +51,9 @@
   text-align: center;
   color: white;
   background-color: #34bf49;
+}
+
+#submit:hover{
+  cursor: pointer;
+  background-color: #3ad852;
 }

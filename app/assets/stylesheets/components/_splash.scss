@@ -9,22 +9,21 @@
 
 .splash-layer{
 	background-color: rgba(0, 0, 0, 0.2);
-	// position: absolute;
 	height: 100%;
 	width: 100%;
-	// display: flex;
-	// flex-direction: row;
 }
 .splash-nav-bar{
 	// background-color: black;
+	color: white;
 	display:flex;
 	justify-content: space-between;
-	padding: 10px 10px;
+	padding: 10px 20px;
 	font-size: 14px;
+	width: 100%;
 }
 
 .splash-nav-bar a{
-	padding-left: 10px;
+	margin: 0 40px;
 }
 
 .splash-nav-bar a:hover{
