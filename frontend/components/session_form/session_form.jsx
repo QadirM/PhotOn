@@ -11,9 +11,10 @@ class SessionForm extends React.Component {
 		this.guestLogin = this.guestLogin.bind(this);
 		// this.handleClickOutside = this.handleClickOutside.bind(this);
 	}
-	
+
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
+		// this.props.errors = [];
 	}
 
 	redirectIfLoggedIn() {
@@ -48,9 +49,23 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
+			return (
+				<div>
+					<p>Don't have an account?
+						&nbsp;
+						<Link to="/signup" className="test">Sign up</Link>
+					</p>
+			</div>
+		);
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return (
+				<div>
+					<p>Already have an account?
+						&nbsp;
+						<Link to="/login" className="test">Log in</Link>
+					</p>
+				</div>
+			);
 		}
 	}
 
@@ -73,9 +88,9 @@ class SessionForm extends React.Component {
 			<div className="login-form-container-layer">
 				<SplashNavBar className="session-nav-bar" />
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to PhotOn!
+					Welcome to PhotOn
 					<br/>
-					Please {this.props.formType} or {this.navLink()}
+					Please {this.props.formType}
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
@@ -94,7 +109,8 @@ class SessionForm extends React.Component {
 						<input id="submit" type="submit" value={submitTitle} />
 						<br/>
 						<button id ="submit" className="submitButton" onClick={this.guestLogin}>Guest Mode</button>
-					</div>
+						{this.navLink()}
+				</div>
 				</form>
 			</div>
 			</div>
