@@ -3,15 +3,13 @@ import { Link } from 'react-router';
 
 const SplashNavBar = () => (
   <nav className="splash-nav-bar">
-    <nav className="logo">
-      <i className="fa fa-camera" aria-hidden="true"></i>
-      &nbsp;
+    <nav className="left-nav">
       <Link to="/" activeClassName="current">Photon</Link>
     </nav>
-    <nav className="login-signup">
+    <nav className="right-nav">
       <Link to="/login" activeClassName="current">Login</Link>
       &nbsp;
-      <Link to="/signup" activeClassName="current">Sign up!</Link>
+      <Link to="/signup" activeClassName="current">Sign up</Link>
     </nav>
   </nav>
 );

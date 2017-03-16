@@ -1,0 +1,62 @@
+.splash{
+	background: url('/assets/splash-nature1.jpg') no-repeat left bottom;
+	height: 100%;
+	background-size: cover;
+	text-shadow: 2px 2px 3px #000000;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.splash-layer{
+	background-color: rgba(0, 0, 0, 0.2);
+	// position: absolute;
+	height: 100%;
+	width: 100%;
+	// display: flex;
+	// flex-direction: row;
+}
+.splash-nav-bar{
+	// background-color: black;
+	display:flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+	font-size: 14px;
+}
+
+.splash-nav-bar a{
+	padding-left: 10px;
+}
+
+.splash-nav-bar a:hover{
+	color: #BEC5C8;
+}
+
+.splash-welcome{
+	font-size: 42px;
+	font-weight: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	vertical-align: middle;
+	padding-top: 20vh;
+}
+
+.splash-welcome a{
+	font-size: 18px;
+	background: #0099e5;
+	padding: 0 30px;
+	height: 50px;
+	border-radius: 100px;
+	font-weight: bold;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	vertical-align: middle;
+}
+
+.splash-welcome a:hover{
+	background-color: #45BBF5;
+}
