@@ -51,6 +51,7 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		const submitTitle = (this.props.formType === 'login') ? "Log In" : "Sign Up";
 		return (
 			<div className="login-form-container">
 			<div className="login-form-container-layer">
@@ -61,21 +62,19 @@ class SessionForm extends React.Component {
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
-						<label> Username:
 							<input type="text"
+								placeholder="Username"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
-						</label>
 						<br/>
-						<label> Password:
 							<input type="password"
+								placeholder="Password"
 								value={this.state.password}
 								onChange={this.update("password")}
 								className="login-input" />
-						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input id="submit" type="submit" value={submitTitle} />
 					</div>
 				</form>
 			</div>
