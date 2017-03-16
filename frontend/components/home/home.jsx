@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Home = ({currentUser, logout}) => {
-  let name = currentUser ? currentUser.name : "";
+  let name = currentUser ? currentUser.username : "";
   return (
   	<hgroup className="header-group">
       <h2 className="header-name">Hi, {name}!</h2>
