@@ -53,7 +53,7 @@ username, and uploaded photos.
 
 ### Phase 4: Home Feed (2 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Users will see a feed of photos from followed users.
 
 ### Phase 5: Follows (1 days)
 
