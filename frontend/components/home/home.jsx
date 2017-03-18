@@ -37,7 +37,7 @@ class Home extends React.Component{
           <button className="header-button" onClick={this.props.logout}>Log Out</button>
       	</div>
         <div>
-          <button onClick={this.upload}>Upload new photo!</button>
+          <button onClick={this.upload}>Upload</button>
           <PhotoList photos={this.props.photos}/>
         </div>
       </div>

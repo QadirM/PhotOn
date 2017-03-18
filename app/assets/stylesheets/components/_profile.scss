@@ -1,0 +1,28 @@
+.profile-view-container{
+  background-color: #f7f8fa;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  border: 5px solid black;
+}
+
+.nav-bar{
+  display:flex;
+	justify-content: space-between;
+	padding: 10px 0px;
+	font-size: 14px;
+  width: 100%;
+  border: 5px solid red;
+}
+
+.user-info-container{
+  width: 100%;
+  border: 5px solid blue;
+}
+
+.user-photos-index{
+  width: 100%;
+  border: 5px solid green;
+}
