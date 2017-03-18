@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://phot-on.herokuapp.com/
 [trello]: https://trello.com/b/1acG3hDU/photon
 
 ## Minimum Viable Product

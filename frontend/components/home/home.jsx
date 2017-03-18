@@ -1,6 +1,5 @@
 import React from 'react';
 // import { Link } from 'react-router';
-import UploadButton from './upload_button';
 import PhotoList from './photo_list';
 
 class Home extends React.Component{
