@@ -1,0 +1,40 @@
+export const uploadPhoto = (photo) => {
+  // NB: the data line below is temporary
+  let data = {photo: {title: "demo title", url: photo.url,
+  description: "demo description"}};
+
+  return $.ajax({
+    method: 'POST',
+    url: '/api/photos',
+    data
+  });
+};
+
+export const fetchPhoto = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/photos/${id}`
+  });
+};
+
+export const fetchPhotos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/photos'
+  });
+};
+
+export const removePhoto = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/photos/${id}`
+  });
+};
+
+export const updatePhoto = (photo) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/photos/${photo.id}`,
+    data: photo
+  });
+};
