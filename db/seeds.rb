@@ -13,5 +13,5 @@ guest = User.create(username: "guest",
   bio: "Wardell Stephen Curry II (born March 14, 1988) is an American professional basketball player for the Golden State Warriors of the National Basketball Association (NBA). Many players and analysts have called him the greatest shooter in NBA history."
   );
 
-p1 = Photo.create(title: "dont fall", url: "https://www.w3schools.com/css/img_fjords.jpg", description: "sample description", user_id: 1)
-p2 = Photo.create(title: "cute puppy", url: "https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png", description: "sample description 2", user_id: 1)
+p1 = Photo.create(title: "dont fall", url: "https://www.w3schools.com/css/img_fjords.jpg", description: "sample description", user_id: guest.id)
+p2 = Photo.create(title: "cute puppy", url: "https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png", description: "sample description 2", user_id: guest.id)
