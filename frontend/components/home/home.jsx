@@ -13,6 +13,10 @@ class Home extends React.Component{
     this.props.fetchPhotos();
   }
 
+  componentDidUpdate() {
+    this.props.fetchPhotos();
+  }
+
   postPhoto(photo) {
     this.props.uploadPhoto(photo);
   }

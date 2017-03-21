@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
     this.upload = this.upload.bind(this);
+    this.goToProfile = this.goToProfile.bind(this);
   }
 
   upload(e) {
@@ -21,9 +22,15 @@ class NavBar extends React.Component{
     this.props.uploadPhoto(photo);
   }
 
+  goToProfile(e) {
+    e.preventDefault();
+    this.props.router.push(`/user/${this.props.currentUser.id}`);
+  }
+
   render() {
     let user = this.props.currentUser ? this.props.currentUser.username : "";
     let userId = this.props.currentUser ? this.props.currentUser.id : "";
+    let userProfileUrl = this.props.currentUser ? this.props.currentUser.profileUrl : "";
     return(
       <nav className="nav-bar">
 
@@ -32,11 +39,14 @@ class NavBar extends React.Component{
         </nav>
 
         <nav className="right-nav">
-          <Link to={`/user/${userId}`} className="test">{user}</Link>
+          <img className="profile-image" src={userProfileUrl} onClick={this.goToProfile}></img>
           &nbsp;
-          <button onClick={this.upload}>Upload</button>
+          <Link className="profile-image" to={`/user/${userId}`} className="test">{user}</Link>
           &nbsp;
-          <button className="header-button" onClick={this.props.logout}>Log Out</button>
+          <button className="profile-image" onClick={this.upload}>Upload</button>
+          &nbsp;
+          <button className="profile-image" className="header-button" onClick={this.props.logout}>
+            Log Out</button>
         </nav>
 
       </nav>
@@ -44,4 +54,4 @@ class NavBar extends React.Component{
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

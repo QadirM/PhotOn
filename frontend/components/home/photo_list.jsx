@@ -8,13 +8,13 @@ class PhotoList extends React.Component{
   render() {
     return(
       <ul>
-        {this.props.photos.map(function (photo) {
+        {this.props.photos.map((photo) => {
           return (
             <li className="photo" key={photo.id}>
               <img src={photo.url}/>
             </li>
           );
-        }, this)}
+        })}
       </ul>
     );
   }

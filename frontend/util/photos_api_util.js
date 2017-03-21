@@ -24,6 +24,13 @@ export const fetchPhotos = () => {
   });
 };
 
+export const fetchProfilePhotos = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}/photos`
+  });
+};
+
 export const removePhoto = (id) => {
   return $.ajax({
     method: 'DELETE',
@@ -33,7 +40,7 @@ export const removePhoto = (id) => {
 
 export const updatePhoto = (photo) => {
   return $.ajax({
-    method: 'DELETE',
+    method: 'PATCH',
     url: `/api/photos/${photo.id}`,
     data: photo
   });
