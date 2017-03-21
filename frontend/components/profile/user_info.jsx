@@ -52,7 +52,7 @@ class UserInfo extends React.Component{
           <p>{this.props.user.bio}</p>
         </div>
         <div className="followers-following">
-          <p>100 followers  40 following</p>
+          <p>100 followers 40 following</p>
         </div>
       </div>
     );

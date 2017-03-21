@@ -32,21 +32,25 @@ class NavBar extends React.Component{
     let userId = this.props.currentUser ? this.props.currentUser.id : "";
     let userProfileUrl = this.props.currentUser ? this.props.currentUser.profileUrl : "";
     return(
-      <nav className="nav-bar">
+      <nav className="main-nav-bar">
 
-        <nav className="left-nav">
-          <Link to="/" activeClassName="current">Photon</Link>
+        <nav className="main-left-nav">
+          <Link to="/" activeClassName="current">
+            <i className="fa fa-bolt" aria-hidden="true"></i>PhotOn
+            </Link>
         </nav>
 
-        <nav className="right-nav">
-          <img className="profile-image" src={userProfileUrl} onClick={this.goToProfile}></img>
+        <nav className="main-right-nav">
+          <img id="mini-profile-pic" src={userProfileUrl} onClick={this.goToProfile}></img>
           &nbsp;
-          <Link className="profile-image" to={`/user/${userId}`} className="test">{user}</Link>
+          <Link to={`/user/${userId}`} className="profile-link">{user}</Link>
           &nbsp;
-          <button className="profile-image" onClick={this.upload}>Upload</button>
+          <button className="main-nav-button" onClick={this.upload}>
+            <i className="fa fa-cloud-upload" aria-hidden="true"></i>
+            Upload</button>
           &nbsp;
-          <button className="profile-image" className="header-button" onClick={this.props.logout}>
-            Log Out</button>
+          <button className="main-nav-button" onClick={this.props.logout}>
+            <i className="fa fa-sign-out" aria-hidden="true"></i>LogOut</button>
         </nav>
 
       </nav>
