@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-import { uploadPhoto, fetchPhotos } from '../../actions/photo_actions';
+import { fetchPhotos } from '../../actions/photo_actions';
 import Home from './home';
 
 const mapStateToProps = ({ session, photos }) => ({
@@ -9,8 +8,6 @@ const mapStateToProps = ({ session, photos }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-  uploadPhoto: (photo) => dispatch(uploadPhoto(photo)),
   fetchPhotos: () => dispatch(fetchPhotos())
 });
 

@@ -21,7 +21,7 @@ class UserInfo extends React.Component{
       if (this.props.currentUser.id == this.props.params.id) {
         return(
           <div className="edit-button">
-            <button type="button">Edit</button>
+            <button type="button">Edit Profile</button>
           </div>
         );
       } else {
