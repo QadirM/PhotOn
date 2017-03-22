@@ -6,11 +6,14 @@ class UserPhotosIndex extends React.Component{
   constructor(props) {
     super(props);
     this.indexItems = this.indexItems.bind(this);
-    this.state = { modalOpen: false, photoUrl: ""};
+    this.state = { modalOpen: false, photo: {} , user: {}};
 
     this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
 		this.handleClick = this.handleClick.bind(this);
+
+    this.editPhoto = this.editPhoto.bind(this);
+    this.deletePhoto = this.deletePhoto.bind(this);
   }
 
   componentDidMount(){
@@ -32,8 +35,8 @@ class UserPhotosIndex extends React.Component{
 	}
 
 	handleClick(photo) {
-
-		this.setState({photoUrl: photo.url}) ;
+    this.props.fetchUser(photo.userId);
+		this.setState({photo: photo}) ;
 		this.setState({ modalOpen: true });
 	}
 
@@ -49,6 +52,15 @@ class UserPhotosIndex extends React.Component{
     </ul>);
   }
 
+  editPhoto() {
+
+  }
+
+  deletePhoto() {
+    this.closeModal();
+    this.props.removePhoto(this.state.photo.id);
+  }
+
   render() {
     return(
       <div className="user-photos-index">
@@ -57,13 +69,45 @@ class UserPhotosIndex extends React.Component{
         <Modal
 						contentLabel="Modal"
 						isOpen={this.state.modalOpen}
-						onRequestClose={this.closeModal}>
+						onRequestClose={this.closeModal}
+            >
 						<div className="modal-body">
-							<div className="close-button">
-                <button onClick={this.closeModal}>X</button>
-							</div>
-              <img src={this.state.photoUrl}/>
-						</div>
+
+							<div className="top-side">
+                <button className="close-button" onClick={this.closeModal}>
+                  <i className="fa fa-times-circle" aria-hidden="true"></i>
+                </button>
+  						</div>
+
+              <div className="left-side">
+                <div className="photo-view">
+                  <img src={this.state.photo.url}/>
+                </div>
+              </div>
+
+              <div className="right-side">
+                <div className="photo-user-profile">
+                  <img src={this.props.user.profileUrl}/>
+                  <Link to={`/user/${this.props.user.id}`}
+                    className="user-link">{this.props.user.username}</Link>
+                </div>
+
+                <div className="photo-title">
+                  {this.state.photo.title}
+                </div>
+
+                <div className="photo-description">
+                  {this.state.photo.description}
+                </div>
+              </div>
+
+              <div className="bottom-side">
+                <button className="edit-button" onClick={this.editPhoto}>Edit</button>
+                &nbsp;
+                <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
+              </div>
+
+            </div>
 					</Modal>
       </div>
     );

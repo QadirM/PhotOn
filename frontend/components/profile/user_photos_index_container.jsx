@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
   fetchProfilePhotos: (id) => dispatch(fetchProfilePhotos(id)),
   fetchPhoto: (id) => dispatch(fetchPhoto(id)),
-  removePhoto: (id) => dispatch(fetchPhoto(id)),
+  removePhoto: (id) => dispatch(removePhoto(id)),
   updatePhoto: (photo) => dispatch(updatePhoto(photo))
 });
 

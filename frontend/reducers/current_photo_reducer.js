@@ -8,12 +8,12 @@ const CurrentPhotoReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PHOTO:
-      let newState = merge({}, state, action.photo);
+      let newState = (action.photo);
       return newState;
     case DELETE_PHOTO:
-      return merge({}, state, action.photo);
+      return (action.photo);
     case MODIFY_PHOTO:
-      return merge({}, state, action.photo);
+      return (action.photo);
     default:
       return state;
   }
