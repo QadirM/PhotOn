@@ -8,8 +8,8 @@
 
 guest = User.create(username: "guest",
   password: "password",
-  cover_url: "http://res.cloudinary.com/qadir/image/upload/v1489951383/xdbugmc2gavhfb2ym0pn.jpg",
-  profile_url: "http://res.cloudinary.com/qadir/image/upload/w_500,h_500,c_crop,g_face,r_max/w_200/x5a9fndr0vij1tt4lwwx.png",
+  cover_url: "https://res.cloudinary.com/qadir/image/upload/v1489951383/xdbugmc2gavhfb2ym0pn.jpg",
+  profile_url: "https://res.cloudinary.com/qadir/image/upload/w_500,h_500,c_crop,g_face,r_max/w_200/x5a9fndr0vij1tt4lwwx.png",
   bio: "Wardell Stephen Curry II (born March 14, 1988) is an American professional basketball player for the Golden State Warriors of the National Basketball Association (NBA). Many players and analysts have called him the greatest shooter in NBA history."
   );
 

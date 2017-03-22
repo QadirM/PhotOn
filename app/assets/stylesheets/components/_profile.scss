@@ -42,24 +42,10 @@
   * {
     padding: 4px 0px;
   }
-// .cover-photo {
-//   position: fixed;
-//   padding: 0;
-//   box-sizing: border-box;
-//   display: flex;
-//   flex-direction: row;
-//   // justify-content: space-between;
-//   align-items: center;
-//   // font-size: 18px;
-//   // color: #525558;
-//   height: 425px;
-//   width: 100%;
-//   z-index: -1;
-// }
+
   .cover-photo {
     width: 100%;
     img{
-      // position: fixed;
       width: 100%;
       height: 425px;
     }
@@ -69,6 +55,7 @@
   .profile-photo {
     margin-top: -100px;
     img {
+      padding: 0px;
       border-style: solid;
       border-color: white;
       border-width: 3px;
@@ -82,16 +69,56 @@
     text-align: center;
   }
 
-  .edit-button {
+  .edit-button, .follow-button {
     color :white;
     background-color: #0099e5;
     padding: 0px 10px;
     border-radius: 2px;
     border: 1px solid #0088cc;
-
   }
 
-  .edit-button:hover {
+  .edit-button:hover, .follow-button:hover {
     background-color: #00aaff;
+  }
+}
+
+.user-photos-index {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  li {
+    height: 300px;
+    width: 300px;
+    margin: 2px 2px;
+    text-align: -webkit-center;
+    overflow-x: hidden;
+  }
+
+  li img {
+    width: auto;
+    height: 100%;
+  }
+
+  .photo:hover {
+    cursor: pointer;
+  }
+
+  .modal-body {
+    // display: flex;
+    // justify-content: center;
+  }
+
+  .closer-button {
+    // text-align: right;
+    // background: none;
   }
 }

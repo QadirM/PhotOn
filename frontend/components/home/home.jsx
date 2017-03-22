@@ -12,10 +12,6 @@ class Home extends React.Component{
     this.props.fetchPhotos();
   }
 
-  componentDidUpdate() {
-    this.props.fetchPhotos();
-  }
-
 
   render(){
     let name = this.props.currentUser ? this.props.currentUser.username : "";
@@ -23,7 +19,7 @@ class Home extends React.Component{
     return(
       <div className="home-container">
         <NavBarContainer />
-        <div>
+        <div className="user-photos-index">
           <PhotoList photos={this.props.photos}/>
         </div>
       </div>
