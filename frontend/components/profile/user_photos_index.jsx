@@ -132,13 +132,12 @@ class UserPhotosIndex extends React.Component{
                 <div className="photo-description">
                   {this.state.photo.description}
                 </div>
+                <div className="buttons">
+                  <button className="edit-button" onClick={this.editPhotoForm}>Edit</button>
+                  <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
+                </div>
               </div>
 
-              <div className="bottom-side">
-                <button className="edit-button" onClick={this.editPhotoForm}>Edit</button>
-                &nbsp;
-                <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
-              </div>
 
             </div>
 					</Modal>
