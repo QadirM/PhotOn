@@ -19,6 +19,8 @@ class UserPhotosIndex extends React.Component{
     this.editPhotoForm = this.editPhotoForm.bind(this);
     this.editPhoto = this.editPhoto.bind(this);
     this.deletePhoto = this.deletePhoto.bind(this);
+
+    this.editButtons = this.editButtons.bind(this);
   }
 
   componentDidMount(){
@@ -94,6 +96,17 @@ class UserPhotosIndex extends React.Component{
     this.props.removePhoto(this.state.photo.id);
   }
 
+  editButtons() {
+    if (this.props.user.id !== this.props.currentUser.id) {return (<div className="buttons"></div>); }
+
+    return (
+      <div className="buttons">
+        <button className="edit-button" onClick={this.editPhotoForm}>Edit</button>
+        <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
+      </div>
+    );
+  }
+
   render() {
     return(
       <div className="user-photos-index">
@@ -132,10 +145,9 @@ class UserPhotosIndex extends React.Component{
                 <div className="photo-description">
                   {this.state.photo.description}
                 </div>
-                <div className="buttons">
-                  <button className="edit-button" onClick={this.editPhotoForm}>Edit</button>
-                  <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
-                </div>
+
+                {this.editButtons()}
+
               </div>
 
 
