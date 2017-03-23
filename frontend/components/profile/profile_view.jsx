@@ -9,6 +9,9 @@ class ProfileView extends React.Component{
     super(props);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     let user = this.props.currentUser ? this.props.currentUser.username : "";
     let userId = this.props.currentUser ? this.props.currentUser.id : "";
