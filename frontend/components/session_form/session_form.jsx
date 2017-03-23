@@ -6,7 +6,10 @@ import SplashNavBar from '../splash/splash_nav_bar';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "" };
+		this.state = { username: "", password: "",
+			cover_url: "http://res.cloudinary.com/qadir/image/upload/v1490228320/th1bpj05jbdt7in5ehyl.png",
+			profile_url: "http://res.cloudinary.com/qadir/image/upload/v1490228344/mpixizp0lioxmh9w0l50.png"
+		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.guestLogin = this.guestLogin.bind(this);
 		// this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -44,7 +47,7 @@ class SessionForm extends React.Component {
 
 	guestLogin(e) {
 		e.preventDefault();
-		this.props.loginGuest({user: {username: "guest", password: "password"}});
+		this.props.loginGuest({user: {username: "Guest", password: "password"}});
 	}
 
 	navLink() {

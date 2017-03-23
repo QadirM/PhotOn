@@ -35,11 +35,18 @@ class UserInfo extends React.Component{
   }
 
   render() {
+    const styles = {
+      backgroundColor: "gray",
+      backgroundSize: "cover",
+      height: "500px"
+    };
+    if (this.props.user.coverUrl) {
+       styles.background = `url(${this.props.user.coverUrl}) no-repeat center center fixed`;
 
+    }
     return(
       <div className="user-info-container">
-        <div className="cover-photo">
-          <img src={this.props.user.coverUrl}></img>
+        <div className="cover-photo" style={styles}>
         </div>
         <div className="profile-photo">
           <img src={this.props.user.profileUrl}></img>
@@ -60,3 +67,7 @@ class UserInfo extends React.Component{
 }
 
 export default withRouter(UserInfo);
+
+
+
+// <img src={this.props.user.coverUrl}></img>

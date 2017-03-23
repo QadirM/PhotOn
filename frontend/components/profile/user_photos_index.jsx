@@ -83,7 +83,6 @@ class UserPhotosIndex extends React.Component{
 
   update(field) {
 		return e => {
-      // debugger;
       let newPhoto = merge({}, this.state.photo);
       newPhoto[field] = e.currentTarget.value;
       this.setState({ photo: newPhoto });

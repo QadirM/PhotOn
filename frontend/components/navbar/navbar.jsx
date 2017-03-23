@@ -11,9 +11,14 @@ class NavBar extends React.Component{
   upload(e) {
     e.preventDefault();
     let that = this;
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
+    cloudinary.openUploadWidget({
+      cloud_name: 'qadir',
+      upload_preset: 'regular'
+      }, (error, results) => {
       if(!error){
         that.postPhoto(results[0]);
+      }else{
+        console.log(error);
       }
     });
   }
