@@ -91,4 +91,22 @@
       font-size: 14px;
     }
   }
+
+  .edit-photo-form {
+    input, button, textarea{
+      color: #525558;
+      font-size: 14px;
+      text-align: left;
+      color: black;
+      border-color: rgba(185,193,199,0.5);
+      border-style: solid;
+      border-width: thin;
+      border-radius: 3px;
+      width: 90%;
+      height: 38px;
+      padding: 8px 10px;
+      border-spacing: 1px;
+      margin: 6px 0px 17px 0px;
+    }
+  }
 }
