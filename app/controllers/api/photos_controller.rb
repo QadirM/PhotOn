@@ -5,8 +5,13 @@ class Api::PhotosController < ApplicationController
   # NB: filter only photos of followed users in the future
 
   def index
-  @photos = Photo.all
-  render "api/photos/index"
+    @photos = []
+    current_user.followees.each do |user|
+      @photos.concat(user.photos)
+    end
+
+    @photos
+    render "api/photos/index"
   end
 
   # NB: add a condition if user doesn't exist

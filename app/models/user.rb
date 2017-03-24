@@ -24,9 +24,26 @@ class User < ActiveRecord::Base
   # before_validation :ensure_session_token_uniqueness
 
   has_many :photos
-  # has_many :followers,
-  #   through: :TBD,
-  #   source: :TBD
+
+  has_many :follows,
+  primary_key: :id,
+  foreign_key: :following_id,
+  class_name: :Follow
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+  has_many :followings,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: :Follow
+
+  has_many :followees,
+    through: :followings,
+    source: :following
+
+
 
   def password= password
     self.password_digest = BCrypt::Password.create(password)
