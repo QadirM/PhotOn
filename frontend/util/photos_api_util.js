@@ -1,6 +1,6 @@
 export const uploadPhoto = (photo) => {
   // NB: the data line below is temporary
-  let data = {photo: {title: "title", url: photo.url,
+  let data = {photo: {title: "title", url: photo.secure_url,
   description: "description"}};
 
   return $.ajax({
