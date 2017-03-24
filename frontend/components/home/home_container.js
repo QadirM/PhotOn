@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions/photo_actions';
 import { fetchUser } from '../../actions/user_actions';
+import { fetchFollows } from '../../actions/follow_actions';
 import Home from './home';
 
 const mapStateToProps = ({ session, photos, user }) => ({
@@ -11,7 +12,8 @@ const mapStateToProps = ({ session, photos, user }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
-  fetchPhotos: () => dispatch(fetchPhotos())
+  fetchPhotos: () => dispatch(fetchPhotos()),
+  fetchFollows: () => dispatch(fetchFollows())
 });
 
 export default connect(

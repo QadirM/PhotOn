@@ -19,6 +19,7 @@ class Home extends React.Component{
 
   componentDidMount() {
     this.props.fetchPhotos();
+    this.props.fetchFollows();
   }
 
   photoList() {

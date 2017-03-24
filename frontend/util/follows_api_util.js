@@ -17,3 +17,10 @@ export const unfollow = (followingId) => {
     }
   });
 };
+
+export const fetchFollows = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/follows'
+  });
+};
