@@ -98,7 +98,6 @@ Photo.create(title: "Dog in the Wilderness", url: "https://res.cloudinary.com/qa
 Follow.create(follower_id:guest.id , following_id: u1.id)
 Follow.create(follower_id:guest.id , following_id: u2.id)
 Follow.create(follower_id:guest.id , following_id: u3.id)
-Follow.create(follower_id:guest.id , following_id: u4.id)
 
 # default profile photo
 
