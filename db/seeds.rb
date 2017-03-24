@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.delete_all
-Photo.delete_all
+# User.delete_all
+# Photo.delete_all
 
 guest = User.create(username: "Guest",
   password: "password",
@@ -99,6 +99,11 @@ Photo.create(title: "sss", url: "http://res.cloudinary.com/qadir/image/upload/v1
 Photo.create(title: "sss", url: "http://res.cloudinary.com/qadir/image/upload/v1490226719/gpkwplxokkzrktjpt65k.jpg", description: "", user_id: u4.id)
 Photo.create(title: "sss", url: "http://res.cloudinary.com/qadir/image/upload/v1490226719/cew38reihdobmdllq4ed.jpg", description: "", user_id: u4.id)
 
+
+Follow.create(follower_id:guest.id , following_id: u1.id)
+Follow.create(follower_id:guest.id , following_id: u2.id)
+Follow.create(follower_id:guest.id , following_id: u3.id)
+Follow.create(follower_id:guest.id , following_id: u4.id)
 
 # default profile photo
 
