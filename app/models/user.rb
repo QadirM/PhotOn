@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}, allow_nil: :true
 
   after_initialize :ensure_session_token
-  before_validation :ensure_session_token_uniqueness
+  # before_validation :ensure_session_token_uniqueness
 
   has_many :photos
   # has_many :followers,
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.session_token = SecureRandom.base64
-    ensure_session_token_uniqueness
+    # ensure_session_token_uniqueness
     self.save
     self.session_token
   end
@@ -56,9 +56,9 @@ class User < ActiveRecord::Base
     self.session_token ||= SecureRandom.base64
   end
 
-  def ensure_session_token_uniqueness
-    while User.find_by(session_token: self.session_token)
-      self.session_token = SecureRandom.base64
-    end
-  end
+  # def ensure_session_token_uniqueness
+  #   while User.find_by(session_token: self.session_token)
+  #     self.session_token = SecureRandom.base64
+  #   end
+  # end
 end

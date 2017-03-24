@@ -26,7 +26,7 @@ class Home extends React.Component{
       <ul>
         {this.props.photos.map((photo) => {
           return (
-            <li className="photo" key={photo.id}>
+            <li className="photo hvr-grow-shadow" key={photo.id}>
               <img src={photo.url} onClick={() => this.handleClick(photo)}/>
             </li>
           );
@@ -65,33 +65,34 @@ class Home extends React.Component{
             >
 						<div className="modal-body">
 
-							<div className="top-side">
-                <button className="close-button" onClick={this.closeModal}>
-                  <i className="fa fa-times-circle" aria-hidden="true"></i>
-                </button>
-  						</div>
-
-              <div className="left-side">
-                <div className="photo-view">
-                  <img src={this.state.photo.url}/>
-                </div>
-              </div>
-
-              <div className="right-side">
-                <div className="photo-user-profile">
-                  <img src={this.props.user.profileUrl}/>
-                  <Link to={`/user/${this.props.user.id}`}
-                    className="user-link">{this.props.user.username}</Link>
+              <div className="content">
+                <div className="left-side">
+                  <div className="top-side">
+                    <button className="close-button" onClick={this.closeModal}>
+                      <i className="fa fa-times-circle" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div className="photo-view">
+                    <img src={this.state.photo.url}/>
+                  </div>
                 </div>
 
-                <div className="photo-title">
-                  {this.state.photo.title}
-                </div>
+                <div className="right-side">
+                  <div className="photo-user-profile">
+                    <img src={this.props.user.profileUrl}/>
+                    <Link to={`/user/${this.props.user.id}`}
+                      className="user-link">{this.props.user.username}</Link>
+                  </div>
 
-                <div className="photo-description">
-                  {this.state.photo.description}
-                </div>
+                  <div className="photo-title">
+                    {this.state.photo.title}
+                  </div>
 
+                  <div className="photo-description">
+                    {this.state.photo.description}
+                  </div>
+
+                </div>
               </div>
 
             </div>

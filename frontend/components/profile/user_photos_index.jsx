@@ -7,7 +7,9 @@ class UserPhotosIndex extends React.Component{
   constructor(props) {
     super(props);
     this.indexItems = this.indexItems.bind(this);
-    this.state = { modalOpen: false, modalOpen2: false, photo: {} , user: {}};
+    this.state = {
+      modalOpen: false, modalOpen2: false, photo: {}, user: {}
+    };
 
     this.openModal2 = this.openModal2.bind(this);
 		this.closeModal2 = this.closeModal2.bind(this);
@@ -57,8 +59,9 @@ class UserPhotosIndex extends React.Component{
   indexItems(){
     return (<ul>
       {this.props.photos.map((photo) => {
+
         return (
-          <li className="photo" key={photo.id}>
+          <li className="photo hvr-grow-shadow" key={photo.id}>
             <img src={photo.url} onClick={() => this.handleClick(photo)}/>
           </li>
         );
@@ -97,12 +100,16 @@ class UserPhotosIndex extends React.Component{
   }
 
   editButtons() {
-    if (this.props.user.id !== this.props.currentUser.id) {return (<div className="buttons"></div>); }
+    if (this.props.user.id !== this.props.currentUser.id) {
+      return (<div className="buttons"></div>);
+    }
 
     return (
       <div className="buttons">
-        <button className="edit-button" onClick={this.editPhotoForm}>Edit</button>
-        <button className="delete-button" onClick={this.deletePhoto}>Delete</button>
+        <button className="edit-button" onClick={this.editPhotoForm}>
+          Edit</button>
+        <button className="delete-button" onClick={this.deletePhoto}>
+          Delete</button>
       </div>
     );
   }
@@ -119,38 +126,42 @@ class UserPhotosIndex extends React.Component{
             >
 						<div className="modal-body">
 
-							<div className="top-side">
-                <button className="close-button" onClick={this.closeModal}>
-                  <i className="fa fa-times-circle" aria-hidden="true"></i>
-                </button>
-  						</div>
 
-              <div className="left-side">
-                <div className="photo-view">
-                  <img src={this.state.photo.url}/>
+              <div className="content">
+                <div className="left-side">
+                  <div className="top-side">
+                    <button className="close-button"
+                      onClick={this.closeModal}>
+                      <i className="fa fa-times-circle"
+                        aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <figure className="photo-view">
+                    <img src={this.state.photo.url}/>
+                  </figure>
                 </div>
+
+                <div className="right-side">
+                  <div className="photo-user-profile">
+                    <img src={this.props.user.profileUrl}/>
+                    <Link to={`/user/${this.props.user.id}`}
+                      className="user-link">
+                      {this.props.user.username}</Link>
+                  </div>
+
+                  <div className="photo-title">
+                    {this.state.photo.title}
+                  </div>
+
+                  <figcaption className="photo-description">
+                    {this.state.photo.description}
+                  </figcaption>
+
+                  {this.editButtons()}
+
+                </div>
+
               </div>
-
-              <div className="right-side">
-                <div className="photo-user-profile">
-                  <img src={this.props.user.profileUrl}/>
-                  <Link to={`/user/${this.props.user.id}`}
-                    className="user-link">{this.props.user.username}</Link>
-                </div>
-
-                <div className="photo-title">
-                  {this.state.photo.title}
-                </div>
-
-                <div className="photo-description">
-                  {this.state.photo.description}
-                </div>
-
-                {this.editButtons()}
-
-              </div>
-
-
             </div>
 					</Modal>
 
@@ -167,37 +178,39 @@ class UserPhotosIndex extends React.Component{
                   </button>
     						</div>
 
-                <div className="left-side">
-                  <div className="photo-view">
-                    <img src={this.state.photo.url}/>
+                <div className="content">
+                  <div className="left-side">
+                    <div className="photo-view">
+                      <img src={this.state.photo.url}/>
+                    </div>
                   </div>
-                </div>
 
-                <div className="right-side">
-                  <form onSubmit={this.editPhoto} className="edit-photo-form">
-          					<div className="edit-form">
-          						<br/>
-                        <label>Title</label>
-                        <br/>
-            							<input type="text"
-            								value={this.state.photo.title}
-            								onChange={this.update("title")}
-            								className="title-input" />
+                  <div className="right-side">
+                    <form onSubmit={this.editPhoto} className="edit-photo-form">
+            					<div className="edit-form">
+            						<br/>
+                          <label>Title</label>
+                          <br/>
+              							<input type="text"
+              								value={this.state.photo.title}
+              								onChange={this.update("title")}
+              								className="title-input" />
 
-          						<br/>
-          						<br/>
-          						<br/>
-                        <label>Description</label>
-                        <br/>
-            							<textarea rows="4" cols="50"
-            								value={this.state.photo.description}
-            								onChange={this.update("description")}
-            								className="description-input" />
+            						<br/>
+            						<br/>
+            						<br/>
+                          <label>Description</label>
+                          <br/>
+              							<textarea rows="4" cols="50"
+              								value={this.state.photo.description}
+              								onChange={this.update("description")}
+              								className="description-input" />
 
-          						<br/>
-          						<input id="submit" type="submit" value="Save" />
-          				</div>
-          				</form>
+            						<br/>
+            						<input id="submit" type="submit" value="Save" />
+            				</div>
+            				</form>
+                  </div>
                 </div>
 
               </div>

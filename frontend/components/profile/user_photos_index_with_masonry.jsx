@@ -29,7 +29,7 @@ class UserPhotosIndex extends React.Component{
   render() {
     let indexItems = this.props.photos.map((photo) => {
       return (
-        <li className="photo" key={photo.id}>
+        <li className="photo hvr-grow-shadow" key={photo.id}>
           <img src={photo.url}/>
         </li>
       );

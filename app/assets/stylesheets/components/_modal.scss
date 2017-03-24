@@ -1,98 +1,131 @@
 .modal-body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: #525558;
   width: 100%;
-  height: 80vh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
-  .top-side {
-
-  }
-
-  .left-side {
+  // justify-content: space-between;
+  .content {
+    // height: 100%;
     display: flex;
-    align-items: top;
-    align-content: top;
-    vertical-align: center;
-    justify-content: flex-start;
-    height: 80vh;
-
-    .photo-view {
-      height: 87vh;
-      img {
-        height: 100%;
-        width: auto;
-        text-align: center;
-        // padding-top: 10px;
-        padding-bottom: 20px;
-      }
-    }
-  }
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    // min-width: 200px;
-    // max-width: 300px;
-    font-size: 18px;
-    height: 70vh;
-    .buttons {
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    .left-side {
       display: flex;
-      flex-direction: row;
-      margin: 50px 10px;
-      margin-left: 0;
-      .delete-button {
-        color :white;
-        background-color: #C00A0A;
-        padding: 5px 15px;
-        border-radius: 4px;
-        border: 1px solid #9e0707;
-      }
-      .edit-button {
-        color :white;
-        background-color: #0099e5;
-        padding: 5px 15px;
-        border-radius: 4px;
-        border: 1px solid #0088cc;
-      }
-      .edit-button:hover {
-        background-color: #00aaff;
-      }
-      .delete-button:hover {
-        background-color: #d82929;
-      }
-      button {
-        margin: 10px;
-      }
-    }
-    .photo-user-profile {
-      font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-      display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
       align-items: center;
-      margin-bottom: 10px;
-      img {
-        width: 50px;
-        height: 50px;
-        padding-right: 10px;
+      height: 100%;
+      .top-side {
+        height: 20px;
+        align-self: flex-start;
       }
+      // align-items: top;
+      // align-content: top;
+      // vertical-align: center;
+      // justify-content: flex-start;
+      // height: 80vh;
 
-      a:hover {
-        color: #0099e5;
+      .photo-view {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        // resize: both;
+        img {
+          // height: 100%;
+          // width: auto;
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+          // text-align: center;
+          // padding-top: 10px;
+          // padding-bottom: 20px;
+        }
+
       }
     }
-
-    .photo-title {
-      margin-top: 50px;
+    .right-side {
+      // border-left: solid 1px #eeeff2;
+      align-self: flex-start;
+      padding-top: 20px;
+      height: 100%;
+      flex: 1;
+      max-width: 200px;
+      display: flex;
+      flex-direction: column;
       padding-left: 10px;
-    }
+      // min-width: 200px;
+      // max-width: 300px;
+      font-size: 18px;
+      // height: 70vh;
+      .photo-user-profile {
+        // padding-bottom: 10px;
+        // border-bottom: solid 1px #eeeff2;
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        margin: 50px 10px;
+        margin-left: 0;
+        .delete-button {
+          color :white;
+          background-color: #C00A0A;
+          padding: 5px 15px;
+          border-radius: 4px;
+          border: 1px solid #9e0707;
+        }
+        .edit-button {
+          color :white;
+          background-color: #0099e5;
+          padding: 5px 15px;
+          border-radius: 4px;
+          border: 1px solid #0088cc;
+        }
+        .edit-button:hover {
+          background-color: #00aaff;
+        }
+        .delete-button:hover {
+          background-color: #d82929;
+        }
+        button {
+          margin: 10px;
+        }
+      }
+      .photo-user-profile {
+        font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        img {
+          width: 50px;
+          height: 50px;
+          padding-right: 10px;
+        }
 
-    .photo-description {
-      font-size: 14px;
-      margin-top: 10px;
-      padding-left: 10px;
+        a:hover {
+          color: #0099e5;
+        }
+      }
+
+      .photo-title {
+        margin-top: 50px;
+        padding-left: 10px;
+      }
+
+      .photo-description {
+        font-size: 14px;
+        margin-top: 10px;
+        padding-left: 10px;
+      }
     }
   }
 
@@ -114,3 +147,55 @@
     }
   }
 }
+
+.update-profile-form {
+  input, button{
+    color: #525558;
+    font-size: 14px;
+    // text-align: left;
+    color: black;
+    border-color: rgba(185,193,199,0.5);
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+    width: 90%;
+    height: 38px;
+    padding: 8px 10px;
+    border-spacing: 1px;
+    margin: 6px 0px 17px 0px;
+  }
+  textarea {
+    border-color: rgba(185,193,199,0.5);
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+    padding: 8px 10px;
+    width: 90%;
+    border-spacing: 1px;
+    margin: 6px 0px 17px 0px;
+  }
+  .image-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 10px;
+    margin-left: 0;
+    text-align: center;
+    .cover-button, .profile-button {
+      color :white;
+      background-color: #0099e5;
+      padding: 5px 15px;
+      border-radius: 4px;
+      border: 1px solid #0088cc;
+    }
+    .cover-button:hover, .profile-button:hover {
+      background-color: #00aaff;
+    }
+    button {
+      // margin: 10px;
+    }
+  }
+}
+
+// .ReactModal__Content {
+//   bottom: 0px;
+// }

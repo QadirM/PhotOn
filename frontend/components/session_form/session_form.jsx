@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { username: "", password: "",
 			cover_url: "http://res.cloudinary.com/qadir/image/upload/v1490228320/th1bpj05jbdt7in5ehyl.png",
-			profile_url: "http://res.cloudinary.com/qadir/image/upload/v1490228344/mpixizp0lioxmh9w0l50.png"
+			profile_url: "http://res.cloudinary.com/qadir/image/upload/v1490228344/mpixizp0lioxmh9w0l50.png",
+			bio: ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.guestLogin = this.guestLogin.bind(this);
