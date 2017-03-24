@@ -17,7 +17,6 @@ class NavBar extends React.Component{
       }, (error, results) => {
       if(!error){
         that.postPhoto(results[0]);
-        console.log(results[0]);
       }else{
         console.log(error);
       }

@@ -29,6 +29,7 @@ class UserInfo extends React.Component{
 
   componentWillUpdate(nextProps, nextState) {
     if (this.props.params.id !== nextProps.params.id) {
+      window.scrollTo(0, 0);
       this.props.fetchUser(nextProps.params.id);
       this.props.fetchFollows();
     }
