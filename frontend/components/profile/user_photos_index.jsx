@@ -199,7 +199,7 @@ class UserPhotosIndex extends React.Component{
             						<br/>
             						<br/>
             						<br/>
-                          <label>Description</label>
+                          <label>Description (optional)</label>
                           <br/>
               							<textarea rows="4" cols="50"
               								value={this.state.photo.description}

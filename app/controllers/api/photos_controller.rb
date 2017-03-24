@@ -1,8 +1,6 @@
 class Api::PhotosController < ApplicationController
 
-  # before_action: require_logged_in
-
-  # NB: filter only photos of followed users in the future
+  before_action :require_logged_in
 
   def index
     @photos = []
@@ -14,7 +12,18 @@ class Api::PhotosController < ApplicationController
     render "api/photos/index"
   end
 
-  # NB: add a condition if user doesn't exist
+  def discover
+    all_photos = Photo.all
+    followed_photos = [];
+    current_user.followees.each do |user|
+      followed_photos.concat(user.photos)
+    end
+    followed_photos.concat(current_user.photos)
+
+    @photos = all_photos.reject{|photo| followed_photos.include?(photo)}
+    render "api/photos/index"
+  end
+
 
   def index_others
     user = User.find(params[:id])

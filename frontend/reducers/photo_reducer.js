@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_PHOTOS, RECEIVE_PROFILE_PHOTOS,
     RECEIVE_PHOTO,
-    DELETE_PHOTO, MODIFY_PHOTO } from '../actions/photo_actions';
+    DELETE_PHOTO, MODIFY_PHOTO, RECEIVE_DISCOVER_PHOTOS } from '../actions/photo_actions';
 
 import merge from 'lodash/merge';
 
@@ -20,6 +20,8 @@ const PhotoReducer = (state = {}, action) => {
     case RECEIVE_ALL_PHOTOS:
       return ( action.photos);
     case RECEIVE_PROFILE_PHOTOS:
+      return (action.photos);
+    case RECEIVE_DISCOVER_PHOTOS:
       return (action.photos);
     default:
       return state;

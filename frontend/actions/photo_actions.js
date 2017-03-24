@@ -3,6 +3,7 @@ import * as APIUtil from '../util/photos_api_util';
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_PROFILE_PHOTOS = "RECEIVE_PROFILE_PHOTOS";
+export const RECEIVE_DISCOVER_PHOTOS = "RECEIVE_DISCOVER_PHOTOS";
 export const DELETE_PHOTO = "REMOVE_PHOTO";
 export const MODIFY_PHOTO = "MODIFY_PHOTO";
 
@@ -18,6 +19,11 @@ const receiveAllPhotos = photos => ({
 
 const receiveProfilePhotos = photos => ({
   type: RECEIVE_PROFILE_PHOTOS,
+  photos
+});
+
+const receiveDiscoverPhotos = photos => ({
+  type: RECEIVE_DISCOVER_PHOTOS,
   photos
 });
 
@@ -49,6 +55,11 @@ export const fetchPhotos = () => dispatch => (
 export const fetchProfilePhotos = (id) => dispatch => (
   APIUtil.fetchProfilePhotos(id)
       .then(res => dispatch(receiveProfilePhotos(res)))
+);
+
+export const fetchDiscoverPhotos = () => dispatch => (
+  APIUtil.fetchDiscoverPhotos()
+      .then(res => dispatch(receiveDiscoverPhotos(res)))
 );
 
 export const removePhoto = id => dispatch => (

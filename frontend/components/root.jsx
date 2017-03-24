@@ -9,6 +9,7 @@ import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import SessionFormContainer from './session_form/session_form_container';
 import ProfileViewContainer from './profile/profile_view_container';
+import DiscoverContainer from './discover/discover_container';
 
 const Root = ({ store }) => {
 
@@ -42,6 +43,7 @@ const Root = ({ store }) => {
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/user/:id" component={ProfileViewContainer} onEnter={_ensureLoggedIn} />
+          <Route path="/discover" component={DiscoverContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

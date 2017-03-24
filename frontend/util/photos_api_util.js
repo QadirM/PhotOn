@@ -1,7 +1,7 @@
 export const uploadPhoto = (photo) => {
   // NB: the data line below is temporary
-  let data = {photo: {title: "demo title", url: photo.url,
-  description: "demo description"}};
+  let data = {photo: {title: "title", url: photo.url,
+  description: "description"}};
 
   return $.ajax({
     method: 'POST',
@@ -21,6 +21,13 @@ export const fetchPhotos = () => {
   return $.ajax({
     method: 'GET',
     url: '/api/photos'
+  });
+};
+
+export const fetchDiscoverPhotos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/photos/discover'
   });
 };
 

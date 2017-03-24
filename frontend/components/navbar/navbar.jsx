@@ -42,7 +42,8 @@ class NavBar extends React.Component{
         <nav className="main-left-nav">
           <Link to="/" activeClassName="current">
             <i className="fa fa-bolt" aria-hidden="true"></i>PhotOn
-            </Link>
+          </Link>
+          <Link to={`/discover`} className="discover-link">Discover</Link>
         </nav>
 
         <nav className="main-right-nav">

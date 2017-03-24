@@ -1,5 +1,7 @@
 class Api::FollowsController < ApplicationController
 
+  before_action :require_logged_in
+
   def index
     @follow_ids = current_user.followee_ids
     render json: @follow_ids
