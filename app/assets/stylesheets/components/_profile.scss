@@ -77,8 +77,21 @@
     border: 1px solid #0088cc;
   }
 
+  .following-button {
+    color :white;
+    background-color: #34bf49;
+    padding: 0px 10px;
+    border-radius: 2px;
+    border: 1px solid #34bf49;
+  }
+
   .edit-button:hover, .follow-button:hover {
     background-color: #00aaff;
+  }
+
+  .following-button:hover {
+    cursor: pointer;
+    background-color: #3ad852;
   }
 }
 

@@ -17,15 +17,20 @@ class UserInfo extends React.Component{
 		this.editUser = this.editUser.bind(this);
     this.uploadCoverPic = this.uploadCoverPic.bind(this);
     this.uploadProfilePic = this.uploadProfilePic.bind(this);
+
+    this.unfollow = this.unfollow.bind(this);
+    this.follow = this.follow.bind(this);
   }
 
   componentDidMount(){
       this.props.fetchUser(this.props.params.id);
+      this.props.fetchFollows();
   }
 
   componentWillUpdate(nextProps, nextState) {
     if (this.props.params.id !== nextProps.params.id) {
       this.props.fetchUser(nextProps.params.id);
+      this.props.fetchFollows();
     }
   }
 
@@ -36,6 +41,14 @@ class UserInfo extends React.Component{
 	closeModal() {
 		this.setState({modalOpen: false});
 	}
+
+  follow() {
+    this.props.followUser(this.props.user.id);
+  }
+
+  unfollow() {
+    this.props.unfollowUser(this.props.user.id);
+  }
 
   handleClick() {
 		this.setState({user: this.props.user, modalOpen: true }) ;
@@ -104,10 +117,18 @@ class UserInfo extends React.Component{
             <button type="button" onClick={() => this.handleClick()}>Edit Profile</button>
           </div>
         );
-      } else {
+      }
+      else if (this.props.follows.includes(this.props.user.id)) {
         return(
           <div className="follow-button">
-            <button type="button">follow</button>
+            <button type="button" onClick={() => this.unfollow()}>Following</button>
+          </div>
+        );
+      }
+      else{
+        return(
+          <div className="following-button">
+            <button type="button" onClick={() => this.follow()}>Follow</button>
           </div>
         );
       }
@@ -158,10 +179,6 @@ class UserInfo extends React.Component{
 
         <div className="bio">
           <p>{this.props.user.bio}</p>
-        </div>
-
-        <div className="followers-following">
-          <p>100 followers 40 following</p>
         </div>
 
         <Modal

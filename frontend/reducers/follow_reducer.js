@@ -1,21 +1,18 @@
 import { RECEIVE_ALL_FOLLOWS,
   RECEIVE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 
-import { merge, pull } from 'lodash';
+// import { merge, pull } from 'lodash';
 // import pull from 'lodash/pull';
 
 const FollowReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_FOLLOW:
-      let newState = merge([], state, [action.follow.id]);
-      return newState;
+      return state.concat([action.follow.following_id]);
     case DELETE_FOLLOW:
-      let newState1 = merge([], state);
-      pull(newState1, action.follow.id);
-      return newState1;
+      return state.filter(element => element !== action.follow.following_id);
     case RECEIVE_ALL_FOLLOWS:
-      return (action.follows);
+      return action.follows;
     default:
       return state;
   }
