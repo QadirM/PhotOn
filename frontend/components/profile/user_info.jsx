@@ -79,7 +79,7 @@ class UserInfo extends React.Component{
       }, (error, results) => {
       if(!error){
         let newUser = merge({}, this.state.user);
-        newUser.cover_url = results[0].url;
+        newUser.cover_url = results[0].secure_url;
         this.setState({ user: newUser });
         this.openModal();
       }else{
@@ -98,7 +98,7 @@ class UserInfo extends React.Component{
       }, (error, results) => {
       if(!error){
         let newUser = merge({}, this.state.user);
-        newUser.profile_url = results[0].url;
+        newUser.profile_url = results[0].secure_url;
         this.setState({ user: newUser });
         this.openModal();
       }else{
